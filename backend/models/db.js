@@ -7,6 +7,10 @@ const pool = mysql.createPool({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
+    port: process.env.DB_PORT || 3306, // Allow custom port
+    ssl: {
+        rejectUnauthorized: false // Required for Aiven/Cloud DBs
+    },
     waitForConnections: true,
     connectionLimit: 10,  // Maximum number of connections in the pool
     queueLimit: 0         // 0 means no limit on queueing requests
