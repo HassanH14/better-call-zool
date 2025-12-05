@@ -2,7 +2,7 @@ services:
   - type: web
     name: better-call-zool-api
     env: node
-    rootCommand: cd backend
+    rootDir: backend
     buildCommand: npm install
     startCommand: npm start
     plan: free
